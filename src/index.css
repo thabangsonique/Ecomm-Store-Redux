@@ -19,3 +19,7 @@ body {
 .btn-primary {
   @apply bg-black space-x-2.5 mt-10 flex items-center rounded-[14px] py-2 px-6;
 }
+
+.custom-scrollbar::webkit-scrollbar-track {
+  width: 6px;
+}

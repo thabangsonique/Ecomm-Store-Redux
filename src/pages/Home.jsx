@@ -8,17 +8,30 @@ export default function Home() {
   return (
     <div className="flex">
       {/* sidebar */}
-      <Sidebar />
+      <div className="fixed">
+        {" "}
+        <Sidebar />
+      </div>
 
-      <div className=" p-6 flex flex-col items-center">
+      {/* MAIN CONTENT */}
+      <div className="ml-[122px] mr-10 flex flex-col items-center">
         {/* Navbar */}
-        <Navbar />
+        <div className="sticky top-0 z-10 bg-background">
+          <Navbar />
+        </div>
+
         {/* ProductListing */}
-        <ProductList />
+        <div className="overflow-y-auto custom-scrollbar">
+          {" "}
+          <ProductList />
+        </div>
       </div>
 
       {/* cartSummery */}
-      <CartSummary />
+      <div className="fixed right-0 w-[345px]">
+        {" "}
+        <CartSummary />
+      </div>
     </div>
   );
 }
