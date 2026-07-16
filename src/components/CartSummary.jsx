@@ -28,7 +28,7 @@ export default function CartSummary() {
           </div>
 
           {/* CTA button */}
-          <button className="btn-primary">
+          <button className="btn-primary mt-10">
             <img src="/cart-white.svg" alt="" />
             <p className="text-white text-xl">View Bag</p>
           </button>
