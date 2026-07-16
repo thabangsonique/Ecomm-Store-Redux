@@ -1,5 +1,10 @@
 import React from "react";
 
 export default function ProductDetail() {
-  return <div>ProductDetails</div>;
+  return (
+    <div>
+      {/* back */}
+      <div>{/* arrow icon */}</div>
+    </div>
+  );
 }

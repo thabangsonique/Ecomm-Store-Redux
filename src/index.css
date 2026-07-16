@@ -23,3 +23,7 @@ body {
 .custom-scrollbar::webkit-scrollbar-track {
   width: 6px;
 }
+
+.scale-hover {
+  @apply hover:cursor-pointer hover:scale-110 rounded-[10px] hover:bg-tertiary/30 transition-all duration-300;
+}

@@ -1,11 +1,10 @@
 import React from "react";
-import products from "../data/products";
 
 export default function ProductCard({ image, title, color, price }) {
   return (
-    <div>
+    <div className="hover:cursor-pointer hover:scale-110 group transition-all duration-300 ">
       {/* image container*/}
-      <div className="rounded-[22px] bg-white p-4">
+      <div className="rounded-[22px] group-hover:shadow-[0_0_15px_rgba(0,0,0,0.15)] bg-white p-4">
         <img src={image} alt={title} />
       </div>
       {/* text content */}
