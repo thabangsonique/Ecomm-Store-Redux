@@ -6,7 +6,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Series 5 SE",
-    price: "$529.99",
+    price: 529.99,
     rating: "4.5/5", //to return
   },
   {
@@ -16,7 +16,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Light Grey",
-    price: "$39.99",
+    price: 39.99,
     rating: "4.5/5", //to return
   },
   {
@@ -26,7 +26,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Serious Black",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
   {
@@ -36,7 +36,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Subway Blue",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
   {
@@ -46,7 +46,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Product RED",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
   {
@@ -56,7 +56,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Milky White",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
   {
@@ -66,7 +66,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Product RED",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
   {
@@ -76,7 +76,7 @@ const products = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat, tincidunt lorem mi duis. Vitae elementum libero.",
     color: "Product RED",
-    price: "$619.99",
+    price: 619.99,
     rating: "4.5/5", //to return
   },
 ];

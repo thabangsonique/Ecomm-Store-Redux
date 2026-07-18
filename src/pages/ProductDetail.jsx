@@ -1,49 +1,57 @@
 import React from "react";
 import products from "../data/products";
+import { useParams } from "react-router-dom";
 import { Star, StarHalf } from "lucide-react";
 import { FaStarHalfAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 export default function ProductDetail() {
+  const { id } = useParams(); //grab ID from URL
+  const product = products.find((item) => item.id === Number(id));
+
   return (
     <div className="w-[953px]">
       {/* back */}
-      <div
-        className="flex space-x-[8px] py-2
+      <Link
+        to="/"
+        className="flex space-x-[8px] py-2 hover:translate-x-5 transition-all duration-300
       "
       >
         {/* arrow icon */}
         <img src="/Arrow-left.svg" alt="arrow-back" />
         <p className="text-xl">Back</p>
-      </div>
+      </Link>
 
       {/* PRODUCT SHOW SECTIOLN - to remove the border*/}
       <div className="grid md:grid-cols-[auto_auto_1fr] p-2  items-start">
         {/* left images */}
+
         <div className="space-y-4">
           <div className="bg-white h-[58px] w-[50px] p-[8px] rounded-[13px]">
-            <img src="/watch.png" alt="watch" />
+            <img src={product.image} alt={product.title} />
           </div>
           <div className="bg-white h-[58px] w-[50px] p-[8px] rounded-[13px]">
-            <img src="/watch.png" alt="watch" />
+            <img src={product.image} alt={product.title} />
           </div>
           <div className="bg-white h-[58px] w-[50px] p-[8px] rounded-[13px]">
-            <img src="/watch.png" alt="watch" />
+            <img src={product.image} alt={product.title} />
           </div>
         </div>
 
         {/* product image */}
         <div className="bg-white rounded-[13px] ml-4">
           <img
-            src="/watch.png"
-            alt="watch image"
+            src={product.image}
+            alt={product.title}
             className="w-[242px] h-[302px]"
           />
         </div>
 
         {/* product content */}
         <div className="ml-[32px]  px-4 pb-4">
-          <h1 className="text-[61px] font-bold">Apple Watch</h1>
+          <h1 className="text-[61px] font-bold">{product.title}</h1>
           <p className="font-medium text-[31px] text-tertiary mb-[25.5px]">
-            Series 5 SE
+            {product.color}
           </p>
           {/* star rating */}
           <div className="flex mb-[17.5px] ">
@@ -55,7 +63,7 @@ export default function ProductDetail() {
             <span className="text-accent text-xl">4.5/5</span>
           </div>
           {/* price */}
-          <span className="text-[31px] font-medium">$ 529.99</span>
+          <span className="text-[31px] font-medium">{product.price}</span>
           <p className="p-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
             pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet

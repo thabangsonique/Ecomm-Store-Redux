@@ -1,10 +1,20 @@
 import React from "react";
+import { addToCart } from "../features/cartSlice";
+import { useDispatch } from "react-redux";
 
-export default function ProductCard({ image, title, color, price }) {
+export default function ProductCard({ product, image, title, color, price }) {
+  const dispatch = useDispatch();
+  const handleAddCart = (e, product) => {
+    e.stopPropagation();
+    e.preventDefault();
+    dispatch(addToCart(product));
+    alert("Product added successfully!");
+  };
+
   return (
-    <div className="hover:cursor-pointer hover:scale-110 group transition-all duration-300 ">
+    <div className="hover:cursor-pointer  group transition-all duration-300 ">
       {/* image container*/}
-      <div className="rounded-[22px] group-hover:shadow-[0_0_15px_rgba(0,0,0,0.15)] bg-white p-4">
+      <div className="rounded-[22px] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.20)] bg-white p-4 transition-all duration-300">
         <img src={image} alt={title} />
       </div>
       {/* text content */}
@@ -16,7 +26,10 @@ export default function ProductCard({ image, title, color, price }) {
         <div className="flex justify-between items-center mt-2 p-2">
           <span className="text-xl font-medium">{price}</span>
           {/* icon */}
-          <div className="flex items-center justify-center rounded-[9px] bg-black h-[34px] w-[34px]">
+          <div
+            onClick={(e) => handleAddCart(e, product)}
+            className=" inline-flex flex-col group items-center px-[10px] py-[10px] justify-center rounded-[9px] bg-black  hover:bg-tertiary hover:scale-110 hover:shadow-2xl transition-all duration-300"
+          >
             <img src="/add-cart.svg" alt="Add to cart" />
           </div>
         </div>

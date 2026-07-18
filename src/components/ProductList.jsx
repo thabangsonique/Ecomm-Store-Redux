@@ -9,6 +9,7 @@ export default function ProductList() {
       {products.map((product) => (
         <Link key={product.id} to={`/product/${product.id}`} className="block">
           <ProductCard
+            product={product}
             image={product.image}
             title={product.title}
             color={product.color}
