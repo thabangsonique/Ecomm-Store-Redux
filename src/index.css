@@ -7,6 +7,7 @@
   --color-accent: #12805d;
   --color-danger: #e5252c;
   --color-succes: #02d693;
+  --color-light: #bfd1e5;
 }
 
 body {
@@ -20,10 +21,22 @@ body {
   @apply bg-black space-x-2.5  flex items-center rounded-[14px] py-2 px-6;
 }
 
+.btn-secondary {
+  @apply px-[24px] py-[8x] border border-black rounded-[11px];
+}
+
 .custom-scrollbar::webkit-scrollbar-track {
   width: 6px;
 }
 
+.no-scrollbar::webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 .scale-hover {
   @apply hover:cursor-pointer hover:scale-110  hover:bg-tertiary/30 transition-all duration-300;
 }

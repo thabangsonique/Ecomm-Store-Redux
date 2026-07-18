@@ -60,7 +60,7 @@ export default function ProductDetail() {
             <Star className="fill-accent text-accent w-[22.5px] h-[21px]" />
             <Star className="fill-accent text-accent w-[22.5px] h-[21px]" />
             <FaStarHalfAlt className="fill-accent text-accent w-[22.5px] h-[21px]" />
-            <span className="text-accent text-xl">4.5/5</span>
+            <span className="text-accent text-xl ml-[25px]">4.5/5</span>
           </div>
           {/* price */}
           <span className="text-[31px] font-medium">{product.price}</span>
