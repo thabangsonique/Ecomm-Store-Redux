@@ -12,6 +12,11 @@ export default function CheckOutItems() {
   const products = useSelector((state) => state.cart.products);
   const shipping = useSelector((state) => state.checkout.shippingAddress);
   const payment = useSelector((state) => state.checkout.paymentMethod);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const formattedSubtotal = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(totalPrice);
 
   const lastFour = String(payment.cardNumber).slice(-4);
 

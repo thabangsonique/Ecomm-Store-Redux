@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function OrderSummary() {
+  const navigate = useNavigate();
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   const shipping = totalPrice > 0 ? 6.99 : 0;
@@ -63,7 +65,10 @@ export default function OrderSummary() {
             <div className="h-[1px] bg-light mt-[16px] mb-4" />
 
             {/* CTA BUTTON */}
-            <button className="text-[15px] text-white font-regular w-full bg-black rounded-[11px] py-[8px] px-[53px] btn-hover">
+            <button
+              onClick={() => navigate("/order-success")}
+              className="text-[15px] text-white font-regular w-full bg-black rounded-[11px] py-[8px] px-[53px] btn-hover"
+            >
               Place your order
             </button>
           </div>
