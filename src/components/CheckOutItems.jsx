@@ -2,6 +2,7 @@ import { Star } from "lucide-react";
 import React from "react";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function CheckOutItems() {
   const products = useSelector((state) => state.cart.products);
@@ -25,9 +26,11 @@ export default function CheckOutItems() {
           </div>
 
           {/* cta-button */}
-          <button className="h-[35px] items-center justify-center btn-secondary text-base font-regular">
-            Change
-          </button>
+          <Link to={"/add-address"}>
+            <button className="h-[35px] items-center justify-center btn-secondary text-base font-regular btn-hover">
+              Change
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -65,9 +68,11 @@ export default function CheckOutItems() {
           </div>
 
           {/* cta-button */}
-          <button className="h-[35px] items-center justify-center btn-secondary text-base font-regular">
-            Change
-          </button>
+          <Link to={"/add-payment"}>
+            <button className="h-[35px] items-center justify-center btn-secondary text-base font-regular btn-hover">
+              Change
+            </button>
+          </Link>
         </div>
       </div>
 

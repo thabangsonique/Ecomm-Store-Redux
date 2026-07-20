@@ -40,3 +40,7 @@ body {
 .scale-hover {
   @apply hover:cursor-pointer hover:scale-110  hover:bg-tertiary/30 transition-all duration-300;
 }
+
+.btn-hover {
+  @apply hover:scale-110 hover:cursor-pointer hover:shadow-lg transition-all duration-300;
+}
