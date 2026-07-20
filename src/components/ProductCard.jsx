@@ -1,5 +1,5 @@
 import React from "react";
-import { addToCart } from "../features/cartSlice";
+import { addToCart } from "../features/cartSlice.jsx";
 import { useDispatch } from "react-redux";
 
 export default function ProductCard({ product, image, title, color, price }) {

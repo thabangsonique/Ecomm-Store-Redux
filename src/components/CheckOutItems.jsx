@@ -4,8 +4,8 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { increament } from "../features/CartSlice";
-import { decreament } from "../features/CartSlice";
+import { increament } from "../features/CartSlice.jsx";
+import { decreament } from "../features/CartSlice.jsx";
 
 export default function CheckOutItems() {
   const dispatch = useDispatch();

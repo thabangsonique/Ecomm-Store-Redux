@@ -3,8 +3,8 @@ import React from "react";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { decreament } from "../features/CartSlice";
-import { increament } from "../features/CartSlice";
+import { decreament } from "../features/cartSlice.jsx";
+import { increament } from "../features/cartSlice.jsx";
 
 export default function Cart() {
   const dispatch = useDispatch();

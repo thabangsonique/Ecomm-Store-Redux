@@ -1,6 +1,6 @@
 import React from "react";
-import CheckOutItems from "../components/CheckOutItems";
-import OrderSummary from "../components/OrderSummary";
+import CheckOutItems from "../components/CheckOutItems.jsx";
+import OrderSummary from "../components/OrderSummary.jsx";
 
 export default function Checkout() {
   return (

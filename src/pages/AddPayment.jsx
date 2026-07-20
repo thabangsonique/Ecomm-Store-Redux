@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setPaymentMethod } from "../features/checkoutSlice";
+import { setPaymentMethod } from "../features/checkoutSlice.jsx";
 
 export default function AddPayment() {
   const [payment, setPayment] = useState({

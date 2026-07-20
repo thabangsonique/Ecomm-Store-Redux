@@ -5,15 +5,15 @@ import heroImg from "./assets/hero.png";
 import "./index.css";
 import Home from "./pages/Home";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-import OrderSuccess from "./pages/OrderSuccess";
-import Checkout from "./pages/Checkout";
-import AddAddress from "./pages/AddAddress";
-import AddPayment from "./pages/AddPayment";
-import ProductList from "./components/ProductList";
-import SavePayment from "./pages/SavePayment";
-import SaveAddress from "./pages/SaveAddress";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import Cart from "./pages/Cart.jsx";
+import OrderSuccess from "./pages/OrderSuccess.jsx";
+import Checkout from "./pages/Checkout.jsx";
+import AddAddress from "./pages/AddAddress.jsx";
+import AddPayment from "./pages/AddPayment.jsx";
+import ProductList from "./components/ProductList.jsx";
+import SavePayment from "./pages/SavePayment.jsx";
+import SaveAddress from "./pages/SaveAddress.jsx";
 
 function App() {
   return (

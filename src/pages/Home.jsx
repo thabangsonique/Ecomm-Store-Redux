@@ -1,8 +1,8 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import ProductList from "../components/ProductList";
-import CartSummary from "../components/CartSummary";
+import Sidebar from "../components/Sidebar.jsx";
+import Navbar from "../components/Navbar.jsx";
+import ProductList from "../components/ProductList.jsx";
+import CartSummary from "../components/CartSummary.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { useState } from "react";
 

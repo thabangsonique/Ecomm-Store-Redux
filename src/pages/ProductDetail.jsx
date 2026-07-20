@@ -1,11 +1,11 @@
 import React from "react";
-import products from "../data/products";
+import products from "../data/products.js";
 import { useParams } from "react-router-dom";
 import { Star, StarHalf } from "lucide-react";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/CartSlice";
+import { addToCart } from "../features/cartSlice.jsx";
 
 export default function ProductDetail() {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { setShippingAddress } from "../features/checkoutSlice";
+import { setShippingAddress } from "../features/checkoutSlice.jsx";
 import { useDispatch } from "react-redux";
 
 export default function AddAddress() {

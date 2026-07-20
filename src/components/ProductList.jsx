@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useOutletContext } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductCard.jsx";
 import products from "../data/products";
 import { useOutlet } from "react-router-dom";
 
