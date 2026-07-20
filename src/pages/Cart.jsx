@@ -55,11 +55,17 @@ export default function Cart() {
                   </span>
                   {/* quantity selector */}
                   <div className="flex space-x-[24px] items-center">
-                    <button onClick={() => dispatch(decreament(product.id))}>
+                    <button
+                      className="hover:cursor-pointer"
+                      onClick={() => dispatch(decreament(product.id))}
+                    >
                       <img src="/minus-icon.svg" alt="Decrease quantity" />
                     </button>
                     <p className="text-[20px]">{product.quantity}</p>
-                    <button onClick={() => dispatch(increament(product.id))}>
+                    <button
+                      onClick={() => dispatch(increament(product.id))}
+                      className="hover:cursor-pointer"
+                    >
                       <img src="/Plus-icon.svg" alt="increase quantity" />
                     </button>
                   </div>
