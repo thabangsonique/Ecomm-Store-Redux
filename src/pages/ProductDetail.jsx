@@ -4,13 +4,16 @@ import { useParams } from "react-router-dom";
 import { Star, StarHalf } from "lucide-react";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/CartSlice";
 
 export default function ProductDetail() {
+  const dispatch = useDispatch();
   const { id } = useParams(); //grab ID from URL
   const product = products.find((item) => item.id === Number(id));
 
   return (
-    <div className="w-[953px]">
+    <div className="w-screen ml-2 md:ml-0 md:w-[953px]">
       {/* back */}
       <Link
         to="/"
@@ -26,7 +29,7 @@ export default function ProductDetail() {
       <div className="grid md:grid-cols-[auto_auto_1fr] p-2  items-start">
         {/* left images */}
 
-        <div className="space-y-4">
+        <div className="space-y-4 space-x-4 flex md:flex-col">
           <div className="bg-white h-[58px] w-[50px] p-[8px] rounded-[13px]">
             <img src={product.image} alt={product.title} />
           </div>
@@ -39,17 +42,17 @@ export default function ProductDetail() {
         </div>
 
         {/* product image */}
-        <div className="bg-white rounded-[13px] ml-4">
+        <div className="bg-white rounded-[13px] w-[200px] mt-5 md:mt-0 md:ml-4">
           <img
             src={product.image}
             alt={product.title}
-            className="w-[242px] h-[302px]"
+            className="md:w-[242px] md:h-[302px]"
           />
         </div>
 
         {/* product content */}
-        <div className="ml-[32px]  px-4 pb-4">
-          <h1 className="text-[61px] font-bold">{product.title}</h1>
+        <div className="ml-0 md:ml-[32px] mt-6 md:mt-0 px-4 pb-4">
+          <h1 className="text-4xl md:text-[61px] font-bold">{product.title}</h1>
           <p className="font-medium text-[31px] text-tertiary mb-[25.5px]">
             {product.color}
           </p>
@@ -64,15 +67,22 @@ export default function ProductDetail() {
           </div>
           {/* price */}
           <span className="text-[31px] font-medium">{product.price}</span>
-          <p className="p-2">
+          <p className="p-2 hidden md:block">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
             pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet
             imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat,
             tincidunt lorem mi duis. Vitae elementum libero.
           </p>
+          <div className="md:hidden flex items-center justify-center w-[200px] mt-6 md:mt-0 p-3 rounded-xl bg-white shadow-lg">
+            {" "}
+            <a className="text-xl font-medium">See Description</a>
+          </div>
 
           {/* CTA button */}
-          <button className="btn-primary mt-2 ml-auto scale-hover">
+          <button
+            onClick={() => dispatch(addToCart(product))}
+            className="btn-primary mt-8 md:mt-2 md:ml-auto scale-hover"
+          >
             <img src="/add-cart.svg" alt="add to cart" />
             <span className="text-white">Add to Bag</span>
           </button>
@@ -82,10 +92,10 @@ export default function ProductDetail() {
       {/* PRODUCT DESCRIPTION */}
       <div className="mt-[24px] p-[16px]">
         {/* line */}
-        <div className="h-0.75 w-[858px] mb-8 bg-dark/50" />
+        <div className="h-0.75 w-[200px] md:w-[858px] mb-8 bg-dark/50" />
         {/* text */}
         <h2 className="text-[31.25px] font-medium">Description</h2>
-        <p className="pt-2">
+        <p className="pt-2 w-[300px] md:w-full">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim
           odio faucibus nec malesuada purus volutpat vel sed viverra. Id
           sagittis, phasellus dui in arcu. Nec arcu, sit nunc, nibh purus

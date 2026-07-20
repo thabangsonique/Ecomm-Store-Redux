@@ -13,7 +13,7 @@ export default function ProductCard({ product, image, title, color, price }) {
   };
 
   return (
-    <div className="hover:cursor-pointer  group transition-all duration-300 ">
+    <div className="w-[223px] md:w-full hover:cursor-pointer  group transition-all duration-300 ">
       {/* image container*/}
       <div className="rounded-[22px] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,0,0,0.20)] bg-white p-4 transition-all duration-300">
         <img src={image} alt={title} />

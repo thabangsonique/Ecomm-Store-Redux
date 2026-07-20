@@ -26,7 +26,7 @@ export default function CartSummary() {
 
   console.log();
   return (
-    <div className="relative flex flex-col flex-1 w-full min-h-screen pt-10 pb-10">
+    <div className="relative flex flex-col flex-1 w-full min-h-screen pt-10 pb-10 bg-background">
       {/* scroll-line */}
       <div className="absolute left-0 top-[51px] bottom-[51px] bg-dark/50 w-[4px]" />
 
@@ -42,7 +42,11 @@ export default function CartSummary() {
                 key={idx}
                 className="flex items-center justify-center bg-white p-2 rounded-2xl"
               >
-                <img src={product.image} alt="iphone" className="size-20" />
+                <img
+                  src={product.image}
+                  alt="iphone"
+                  className="h-20 w-20 xl:size-20 shrink-0"
+                />
               </div>
             ))}
           </div>

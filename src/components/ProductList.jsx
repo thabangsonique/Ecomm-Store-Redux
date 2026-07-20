@@ -1,12 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import products from "../data/products";
+import { useOutlet } from "react-router-dom";
 
 export default function ProductList() {
+  const { isMenuOpen, searchTerm } = useOutletContext();
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
   return (
-    <div className="grid md:grid-cols-4 mt-10.5 pt-2 gap-[48px] pb-4">
-      {products.map((product) => (
+    <div
+      className={`grid ${isMenuOpen ? "md:grid-cols-3" : "md:grid-cols-4"} mt-10.5 pt-2 gap-[48px] pb-4 transition-all dutation-300`}
+    >
+      {filteredProducts.map((product) => (
         <Link key={product.id} to={`/product/${product.id}`} className="block">
           <ProductCard
             product={product}

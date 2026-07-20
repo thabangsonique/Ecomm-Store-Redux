@@ -152,6 +152,22 @@ export default function CheckOutItems() {
           ))}
         </div>
       </div>
+
+      <div className="fixed bottom-0 left-0 right-0 z-20 border-t border-gray-200 bg-white px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] md:hidden">
+        <div className="flex items-center justify-between max-w-5xl mx-auto">
+          <div>
+            <p className="text-sm text-tertiary">Total</p>
+            <p className="text-xl font-semibold text-dark">
+              {formattedSubtotal}
+            </p>
+          </div>
+          <Link to="/checkout">
+            <button className="rounded-[10px] bg-black px-5 py-3 text-white font-medium btn-hover">
+              Checkout
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
