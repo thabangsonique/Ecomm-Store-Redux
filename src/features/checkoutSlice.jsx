@@ -1,22 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  shippingAddress: {
-    fullname: "",
-    street: "",
-    city: "",
-    province: "",
-    country: "",
-    saveAssDefault: false,
-  },
+const defaultAddress = {
+  fullname: "John Maker",
+  street: "123 Plae Grond Street",
+  city: "Vermont",
+  province: "California",
+  country: "United States of America",
+  saveAsDefault: true,
+};
 
-  paymentMethod: {
-    cardHolderName: "",
-    cardNumber: "",
-    expiryDate: "",
-    cvc: "",
-    saveAssDefault: false,
-  },
+const defaultCardPayment = {
+  cardNumber: "1252",
+};
+
+//check if theres any address saved.
+const savedAddress = JSON.parse(localStorage.getItem("shippingAddress"));
+const savedPayment = JSON.parse(localStorage.getItem("paymentMethod"));
+
+const initialState = {
+  shippingAddress: savedAddress || defaultAddress,
+
+  paymentMethod: savedPayment || defaultCardPayment,
 };
 
 const checkoutSlice = createSlice({

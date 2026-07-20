@@ -4,6 +4,8 @@ import { setShippingAddress } from "../features/checkoutSlice";
 import { useDispatch } from "react-redux";
 
 export default function AddAddress() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [shipping, setShipping] = useState({
     fullname: "",
     street: "",
@@ -13,20 +15,36 @@ export default function AddAddress() {
     saveAssDefault: false,
   });
 
-  const navigate = useNavigate();
+  //submit function
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(shipping);
+    dispatch(setShippingAddress(shipping));
+
+    //save address data to local storage
+    localStorage.setItem("shippingAddress", JSON.stringify(shipping));
+
+    navigate("/save-address");
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen border border-black py-[95px]">
       {/* card form */}
       {/* shiping name */}
 
       <div className="bg-white p-8 w-[676px] rounded-[15px]">
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col space-y-2">
             <label htmlFor="shippingName" className="text-base text-dark/50">
               Shipping Name
             </label>
             <input
               id="shippingName"
+              required
+              value={shipping.fullname}
+              onChange={(e) =>
+                setShipping({ ...shipping, fullname: e.target.value })
+              }
               type="text"
               placeholder="John Maker"
               className="w-full bg-white rounded-[13px] py-4 px-6 text-xl focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-xl placeholder:font-medium shadow-lg transition-colors duration-300"
@@ -40,6 +58,11 @@ export default function AddAddress() {
             </label>
             <input
               id="shippingName"
+              required
+              value={shipping.street}
+              onChange={(e) =>
+                setShipping({ ...shipping, street: e.target.value })
+              }
               type="text"
               placeholder="123 Plae Grond Street"
               className="w-full bg-white rounded-[13px] py-4 px-6 text-xl focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-xl placeholder:font-medium shadow-lg transition-colors duration-300"
@@ -53,6 +76,11 @@ export default function AddAddress() {
             </label>
             <input
               id="shippingName"
+              required
+              value={shipping.city}
+              onChange={(e) =>
+                setShipping({ ...shipping, city: e.target.value })
+              }
               type="text"
               placeholder="Vermont"
               className="w-full bg-white rounded-[13px] py-4 px-6 text-xl focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-xl placeholder:font-medium shadow-lg transition-colors duration-300"
@@ -66,6 +94,11 @@ export default function AddAddress() {
             </label>
             <input
               id="shippingName"
+              required
+              value={shipping.province}
+              onChange={(e) =>
+                setShipping({ ...shipping, province: e.target.value })
+              }
               type="text"
               placeholder="California"
               className="w-full bg-white rounded-[13px] py-4 px-6 text-xl focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-xl placeholder:font-medium shadow-lg transition-colors duration-300"
@@ -79,6 +112,11 @@ export default function AddAddress() {
             </label>
             <input
               id="shippingName"
+              required
+              value={shipping.country}
+              onChange={(e) =>
+                setShipping({ ...shipping, country: e.target.value })
+              }
               type="text"
               placeholder="United States of America"
               className="w-full bg-white rounded-[13px] py-4 px-6 text-xl focus:outline-none focus:ring-2 focus:ring-accent placeholder:text-xl placeholder:font-medium shadow-lg transition-colors duration-300"
@@ -89,14 +127,22 @@ export default function AddAddress() {
           <div className="flex items-center mt-4 space-x-[8px] py-4 px-2">
             {/* box */}
 
-            <input type="checkbox" id="checkbox" className="sr-only" />
+            <input
+              checked={shipping.saveAssDefault}
+              onChange={(e) =>
+                setShipping({ ...shipping, saveAssDefault: e.target.checked })
+              }
+              type="checkbox"
+              id="checkbox"
+              className="sr-only"
+            />
 
             <label
               htmlFor="checkbox"
               className="w-[16px] h-[16px] p-[2px] flex items-center justify-center border border-tertiary rounded-[2px] hover:cursor-pointer"
             >
               <div
-                className={`w-full h-full rounded-[2px] transition-colors duration-300 `}
+                className={`w-full h-full rounded-[2px] transition-colors duration-300 ${shipping.saveAssDefault ? "bg-accent" : "bg-transparent"}`}
               />
             </label>
 
@@ -112,6 +158,7 @@ export default function AddAddress() {
           {/* CTA button */}
 
           <button
+            onClick={() => navigate("/save-address")}
             type="submit"
             className="flex w-full items-center justify-center mt-8 space-x-2 rounded-[10px] bg-black py-[8px] btn-hover"
           >

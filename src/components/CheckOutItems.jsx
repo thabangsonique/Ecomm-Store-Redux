@@ -3,10 +3,17 @@ import React from "react";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { increament } from "../features/CartSlice";
+import { decreament } from "../features/CartSlice";
 
 export default function CheckOutItems() {
+  const dispatch = useDispatch();
   const products = useSelector((state) => state.cart.products);
-  console.log(products);
+  const shipping = useSelector((state) => state.checkout.shippingAddress);
+  const payment = useSelector((state) => state.checkout.paymentMethod);
+
+  const lastFour = String(payment.cardNumber).slice(-4);
 
   return (
     <div className="flex flex-col overflow-y-auto h-screen no-scrollbar">
@@ -19,10 +26,12 @@ export default function CheckOutItems() {
           {/* dynamic-text-render */}
           <div>
             {" "}
-            <p className="text-regular text-xl"> John Maker</p>
-            <p className="text-regular text-xl">123 Plae Grond Stret</p>
-            <p className="text-regular text-xl">Vermont, California</p>
-            <p className="text-regular text-xl">United States of America</p>
+            <p className="text-regular text-xl">{shipping.fullname}</p>
+            <p className="text-regular text-xl">{shipping.street}</p>
+            <p className="text-regular text-xl">
+              {shipping.city}, {shipping.province}
+            </p>
+            <p className="text-regular text-xl">{shipping.country}</p>
           </div>
 
           {/* cta-button */}
@@ -47,7 +56,8 @@ export default function CheckOutItems() {
               {/* icon */}
               <img src="/Card-icon.svg" alt="Card" />
               <p className="text-xl font-regular">
-                Matsercard <span className="text-tertiary">ending in 1252</span>
+                Matsercard{" "}
+                <span className="text-tertiary">ending in {lastFour}</span>
               </p>
             </div>
             <div className="flex space-x-[8px] mb-4">
@@ -122,11 +132,17 @@ export default function CheckOutItems() {
                   </span>
                   {/* quantity selector */}
                   <div className="flex space-x-[24px] items-center">
-                    <button>
+                    <button
+                      onClick={() => dispatch(decreament(product.id))}
+                      className="btn-hover"
+                    >
                       <img src="/minus-icon.svg" alt="Decrease quantity" />
                     </button>
                     <p className="text-[20px]">{product.quantity}</p>
-                    <button>
+                    <button
+                      onClick={() => dispatch(increament(product.id))}
+                      className="btn-hover"
+                    >
                       <img src="/Plus-icon.svg" alt="increase quantity" />
                     </button>
                   </div>

@@ -22,7 +22,7 @@ export default function OrderSummary() {
               <p className="text-tertiary">Items:</p>
               <p className="text-tertiary">
                 <span className="mr-1 text-tertiary">$</span>
-                {totalPrice}
+                {totalPrice.toFixed(2)}
               </p>
             </div>
             <div className="flex justify-between ">

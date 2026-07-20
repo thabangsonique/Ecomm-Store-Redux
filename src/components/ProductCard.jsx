@@ -8,6 +8,7 @@ export default function ProductCard({ product, image, title, color, price }) {
     e.stopPropagation();
     e.preventDefault();
     dispatch(addToCart(product));
+    localStorage.setItem("product", JSON.stringify(product));
     alert("Product added successfully!");
   };
 

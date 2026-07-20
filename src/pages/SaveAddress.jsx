@@ -10,9 +10,7 @@ export default function SaveAddress() {
         {/* icon */}
 
         <CircleCheck className="text-green-600 h-20 w-20" />
-        <h1 className="text-3xl font-bold">
-          Payment method saved successfully!
-        </h1>
+        <h1 className="text-3xl font-bold">Address saved successfully!</h1>
 
         {/* cta button */}
         <button

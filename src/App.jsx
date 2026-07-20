@@ -13,6 +13,7 @@ import AddAddress from "./pages/AddAddress";
 import AddPayment from "./pages/AddPayment";
 import ProductList from "./components/ProductList";
 import SavePayment from "./pages/SavePayment";
+import SaveAddress from "./pages/SaveAddress";
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
         </Route>
 
         {/* stand-alone pages */}
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="add-payment" element={<AddPayment />} />
-        <Route path="add-address" element={<AddAddress />} />
-        <Route path="save-payment" element={<SavePayment />} />
-        <Route path="order-success" element={<OrderSuccess />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/add-payment" element={<AddPayment />} />
+        <Route path="/add-address" element={<AddAddress />} />
+        <Route path="/save-payment" element={<SavePayment />} />
+        <Route path="/save-address" element={<SaveAddress />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </BrowserRouter>
   );

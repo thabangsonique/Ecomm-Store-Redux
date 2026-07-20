@@ -57,7 +57,7 @@ export default function AddPayment() {
     console.log(payment);
 
     dispatch(setPaymentMethod(payment));
-    console.log("dispatched!");
+    localStorage.setItem("paymentMethod", JSON.stringify(payment));
     navigate("/save-payment");
   };
 
