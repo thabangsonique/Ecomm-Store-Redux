@@ -42,7 +42,7 @@ export default function ProductDetail() {
         </div>
 
         {/* product image */}
-        <div className="bg-white rounded-[13px] w-[200px] mt-5 md:mt-0 md:ml-4">
+        <div className="bg-white rounded-[13px] w-[200px] mt-5 md:mt-0 ml-20 md:ml-4">
           <img
             src={product.image}
             alt={product.title}
@@ -52,7 +52,7 @@ export default function ProductDetail() {
 
         {/* product content */}
         <div className="ml-0 md:ml-[32px] mt-6 md:mt-0 px-4 pb-4">
-          <h1 className="text-4xl md:text-[61px] font-bold">{product.title}</h1>
+          <h1 className="text-4xl xl:text-[61px] font-bold">{product.title}</h1>
           <p className="font-medium text-[31px] text-tertiary mb-[25.5px]">
             {product.color}
           </p>
@@ -67,12 +67,14 @@ export default function ProductDetail() {
           </div>
           {/* price */}
           <span className="text-[31px] font-medium">{product.price}</span>
-          <p className="p-2 hidden md:block">
+          <p className="p-2 hidden md:block md:w-[300px] xl:w-[550px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
             pellentesque tellus imperdiet mattis. Proin in quis ipsum non amet
             imperdiet. Dignissim nisi leo a at. Sit nec lacus, nunc volutpat,
             tincidunt lorem mi duis. Vitae elementum libero.
           </p>
+
+          {/* MOBILE VIEW */}
           <div className="md:hidden flex items-center justify-center w-[200px] mt-6 md:mt-0 p-3 rounded-xl bg-white shadow-lg">
             {" "}
             <a className="text-xl font-medium">See Description</a>
@@ -81,7 +83,7 @@ export default function ProductDetail() {
           {/* CTA button */}
           <button
             onClick={() => dispatch(addToCart(product))}
-            className="btn-primary mt-8 md:mt-2 md:ml-auto scale-hover"
+            className="btn-primary mt-8 md:mt-2 md:ml-35 xl:ml-auto scale-hover"
           >
             <img src="/add-cart.svg" alt="add to cart" />
             <span className="text-white">Add to Bag</span>
@@ -92,10 +94,10 @@ export default function ProductDetail() {
       {/* PRODUCT DESCRIPTION */}
       <div className="mt-[24px] p-[16px]">
         {/* line */}
-        <div className="h-0.75 w-[200px] md:w-[858px] mb-8 bg-dark/50" />
+        <div className="h-0.75 w-[200px] md:w-[600px] xl:w-[858px] mb-8 bg-dark/50" />
         {/* text */}
         <h2 className="text-[31.25px] font-medium">Description</h2>
-        <p className="pt-2 w-[300px] md:w-full">
+        <p className="pt-2 w-[300px] w-[600px] xl:w-full">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim
           odio faucibus nec malesuada purus volutpat vel sed viverra. Id
           sagittis, phasellus dui in arcu. Nec arcu, sit nunc, nibh purus
