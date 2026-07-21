@@ -12,7 +12,7 @@ export default function ProductList() {
   );
   return (
     <div
-      className={`grid ${isMenuOpen ? "md:grid-cols-3" : "md:grid-cols-4"} mt-10.5 pt-2 gap-[48px] pb-4 transition-all dutation-300`}
+      className={`grid ${isMenuOpen ? "md:grid-cols-3" : "md:grid-cols-2 md:gap-[70px] xl:grid-cols-4"} mt-10.5 pt-2 gap-[48px] pb-4 transition-all dutation-300`}
     >
       {filteredProducts.map((product) => (
         <Link key={product.id} to={`/product/${product.id}`} className="block">

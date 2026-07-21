@@ -11,7 +11,9 @@ export default function Cart() {
   const productsCart = useSelector((state) => state.cart.products);
   return (
     <div className="px-0  py-[40px] xl:px-[48px] w-screen md:w-[973px]">
-      <h1 className="text-[48.83px] text-center">Check your Bag Items</h1>
+      <h1 className="text-[48.83px] text-center md:text-left">
+        Check your Bag Items
+      </h1>
 
       {/* collective cart items conditional state */}
 

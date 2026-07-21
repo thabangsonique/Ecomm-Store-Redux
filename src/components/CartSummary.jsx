@@ -30,7 +30,7 @@ export default function CartSummary() {
       {/* scroll-line */}
       <div className="absolute left-0 top-[51px] bottom-[51px] bg-dark/50 w-[4px]" />
 
-      <div className="px-8 ">
+      <div className="px-4 ">
         <h1 className="font-medium text-center text-[39.06px]">Bag</h1>
 
         {/* cart items */}
